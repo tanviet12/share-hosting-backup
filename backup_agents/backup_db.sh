@@ -105,7 +105,7 @@ rm -rf $DES_DIR/LATEST && ln -sf $DES_DIR/$TODAY $DES_DIR/LATEST && echo `date` 
 
 echo ==============END BACKUP DATABASE `date` ==================== >> /var/log/backup/$TODAY.log
 
-# Send log to support@123host.vn
+# Send log to support@abc.com
 HOSTNAME=`/bin/hostname`
 echo "Backup database result for $HOSTNAME" on $TODAY > /tmp/msg.txt
 SUBJECT="Backup database result for $HOSTNAME on $TODAY"
@@ -115,4 +115,4 @@ mutt -v > /dev/null || yum install mutt -y
 
 [ ! -f $ATTACH ] && echo "Backup database on $HOSTNAME not work!" > $ATTACH && echo "Backup database on $HOSTNAME not work!" > /tmp/msg.txt
 
-mutt -s "$SUBJECT" support@123host.vn -a $ATTACH < /tmp/msg.txt
+mutt -s "$SUBJECT" support@abc.com -a $ATTACH < /tmp/msg.txt

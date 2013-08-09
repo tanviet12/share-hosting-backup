@@ -71,7 +71,7 @@ done
 
 
 # Copy backup script to target server
-$RSYNC -a /root/123host/backup/backup_agents/ $HOST:/root/backup/
+$RSYNC -a ./backup_agents/ $HOST:/root/backup/
 
 # Check accounts hosting before backup
 # ssh root@$HOST /root/backup/check_before_bk.sh
@@ -110,11 +110,11 @@ done
 
 echo `date` : End backup config file and source website >> /var/log/backup/$TODAY-$HOST.log
 
-# Send log backup to support@123host.vn
+# Send log backup to support@abc.com
 
-# Send log backup source code  to support.team@vinahost.vn
+# Send log backup source code  to support@abc.com
 echo "Backup source code result for $HOST on $TODAY" > /tmp/msg.txt
 SUBJECT="Backup source code result for $HOST on $TODAY"
 ATTACH="/var/log/backup/$TODAY-$HOST.log"
 
-/usr/local/bin/mutt -s "$SUBJECT" support@123host.vn -a $ATTACH < /tmp/msg.txt
+/usr/local/bin/mutt -s "$SUBJECT" support@abc.com -a $ATTACH < /tmp/msg.txt
