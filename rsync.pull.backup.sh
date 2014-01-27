@@ -1,7 +1,7 @@
 #!/bin/bash
 # Configuration
 HOST=$1
-DES_DIR="/vz/backup/sharehosting/$HOST"
+DES_DIR="/directory_backup/$HOST"
 RSYNC="/usr/bin/rsync"
 CYCLE_BACKUP=1
 LAST_DAY_BACKUP=`date -d "$CYCLE_BACKUP day ago" +'%Y-%m-%d'`
